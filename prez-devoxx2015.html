@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=1024, user-scalable=no">
+
+  <title>Your deck.js Presentation</title>
+
+  <!-- Required stylesheet -->
+  <link rel="stylesheet" media="screen" href="core/deck.core.css">
+
+  <!-- Extension CSS files go here. Remove or add as needed. -->
+  <link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+  <link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+  <link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+  <link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+  <link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+
+  <!-- Style theme. More available in /themes/style/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/style/devoxx2015.css">
+
+  <!-- Transition theme. More available in /themes/transition/ or create your own. -->
+  <link rel="stylesheet" media="screen" href="themes/transition/fade.css">
+
+  <!-- Basic black and white print styles -->
+  <link rel="stylesheet" media="print" href="core/print.css">
+
+  <!-- Include syntaxhighlighter theme -->
+  <link href="syntaxhighlighter/styles/shCore.css" rel="stylesheet" type="text/css" />
+  <link href="syntaxhighlighter/styles/shThemeDefault.css" rel="stylesheet" type="text/css" />
+
+  <!-- Required Modernizr file -->
+  <script src="modernizr.custom.js"></script>
+</head>
+<body>
+  <div class="deck-container">
+
+    <!-- Begin slides. Just make elements with a class of slide. -->
+
+    <section class="slide devoxx-title-prez1">
+      <div class="main-slide-content">
+        <h1>Another super title</h1>
+      </div>
+      <div class="footer white-on-green">
+        <div class="pull-left">#YourSessionHashtag</div>
+        <div class="pull-right">@YourTwitterHandle</div>
+      </div>
+    </section>
+
+    <section class="slide devoxx-title-prez2">
+      <div class="main-slide-content">
+        <h1 class="border-devoxx-style">Sample presentation</h1>
+      </div>
+      <div class="pres-author border-devoxx-style">@your_twitter_handle<br>Your company, your web site<br>Who you are</div>
+      <div class="footer white-on-green">
+        <div class="pull-left">#YourSessionHashtag</div>
+        <div class="pull-right">@YourTwitterHandle</div>
+      </div>
+    </section>
+
+    <section class="slide devoxx-plan-slide">
+      <div class="logo-devoxx-france"><img src="themes/devoxx/DevoxxFranceVertical.png"></div>
+      <div class="title-slide">Your Plan</div>
+      <div class="content-slide bullets">
+        <ul>
+          <li>Bullet Point 1</li>
+          <li>Bullet Point 2</li>
+        </ul>
+        <ul>
+          <li>Second series</li>
+          <li>Another Bullet
+            <ul>
+              <li>Sub bullet</li>
+              <li>Another Sub Bullet</li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="footer white-on-orange">
+        <div class="pull-left">#YourSessionHashtag</div>
+        <div class="pull-right">@YourTwitterHandle</div>
+      </div>
+    </section>
+
+    <section class="slide devoxx-inter-slide">
+      <h1>Objectifs</h1>
+      <div class="bottom-text">
+        Ce que vous allez apprendre pendant cette présentation<br>
+        What you will learn during this presentation
+      </div>
+    </section>
+
+    <section class="slide devoxx-demo-slide">
+      <h1>Demo</h1>
+      <div class="footer white-on-orange">
+        <div class="pull-left">#YourSessionHashtag</div>
+        <div class="pull-right">@YourTwitterHandle</div>
+      </div>
+      <div class="img-devoxx-elt"><img src="themes/devoxx/devoxx_elt.png"></div>
+      <img class="img-footer" src="themes/devoxx/DevoxxFrance.png">
+    </section>
+
+    <section class="slide devoxx-plan-slide">
+      <div class="logo-devoxx-france"><img src="themes/devoxx/DevoxxFranceVertical.png"></div>
+      <div class="title-slide">Show me some code</div>
+      <div class="content-slide code-devoxx">
+          <pre class="brush: groovy">static String friendlyBirthDate(Date date) {
+    def days = date - BIRTH
+    switch (days) {
+      case 0:             return "Jour de naissance"
+      case 1:             return "1 jour"
+      case 1..<31:        return "${days} jours"
+      case 31..<90:       return "${days.intdiv(7)+1} semaines"
+      case 91..<914:      return "${days.intdiv(30)} mois"
+      case 914..365*100:
+        int y = days.intdiv(365)
+        boolean half = (days - 365.25 * y) > 182
+        return "${y} ans${half ? ' et demi' : ''}"
+   }
+}</pre>
+      </div>
+      <div class="footer white-on-orange">
+        <div class="pull-left">#YourSessionHashtag</div>
+        <div class="pull-right">@YourTwitterHandle</div>
+      </div>
+    </section>
+
+
+    <section class="slide devoxx-image-slide">
+      <img src="themes/devoxx/image.jpg">
+    </section>
+
+
+    <!-- End slides. -->
+
+    <!-- Begin extension snippets. Add or remove as needed. -->
+
+    <!-- deck.navigation snippet -->
+<!--    <div aria-role="navigation">
+      <a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+      <a href="#" class="deck-next-link" title="Next">&#8594;</a>
+    </div>
+-->
+    <!-- deck.status snippet -->
+    <p class="deck-status" aria-role="status">
+      <span class="deck-status-current"></span>
+      /
+      <span class="deck-status-total"></span>
+    </p>
+
+    <!-- deck.goto snippet -->
+    <form action="." method="get" class="goto-form">
+      <label for="goto-slide">Go to slide:</label>
+      <input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+      <datalist id="goto-datalist"></datalist>
+      <input type="submit" value="Go">
+    </form>
+
+    <!-- End extension snippets. -->
+  </div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- SyntaxHighlihter -->
+<script type="text/javascript" src="syntaxhighlighter/scripts/shCore.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJScript.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushJava.js"></script>
+<script type="text/javascript" src="syntaxhighlighter/scripts/shBrushGroovy.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+  $(function() {
+    $.deck('.slide');
+  });
+  SyntaxHighlighter.all();
+  SyntaxHighlighter.defaults['toolbar'] = false;
+</script>
+</body>
+</html>
